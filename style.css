@@ -1,0 +1,187 @@
+/* ==========================================================================
+   THƯƠNG TỐC Express Tech - Multi-Page SPA Master Stylesheet
+   ========================================================================== */
+
+:root {
+  --primary: #0066FF;
+  --primary-hover: #0052cc;
+  --primary-light: #eff6ff;
+  --slate-dark: #111827;
+  --slate-panel: #1e252b;
+  --accent: #ef4444;
+  --accent-hover: #dc2626;
+  --bg-light: #f8fafc;
+  --border-color: #e2e8f0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* SPA Pages Visibility */
+.spa-page {
+  display: none;
+  animation: pageFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.spa-page.active-page {
+  display: block;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Links Active State */
+.nav-btn {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.nav-btn.active-nav {
+  background-color: #0066FF !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+/* Ticker Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 24s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse Animations */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.45); }
+  50% { box-shadow: 0 0 0 12px rgba(0, 102, 255, 0); }
+}
+.pulse-primary {
+  animation: pulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulseRed {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 14px rgba(239, 68, 68, 0); }
+}
+.pulse-danger {
+  animation: pulseRed 1.8s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Product Card Hover Effect */
+.product-card {
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.22s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px -6px rgba(0, 102, 255, 0.15), 0 8px 12px -4px rgba(0, 0, 0, 0.04);
+}
+
+/* Voucher Ticket */
+.voucher-ticket {
+  position: relative;
+  background: #ffffff;
+  border: 1px dashed #0066FF;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.voucher-ticket:hover {
+  background: #f0f7ff;
+  transform: translateY(-2px);
+}
+
+.voucher-ticket.active-voucher {
+  background: #eff6ff;
+  border: 2px solid #0066FF;
+}
+
+/* Drawer & Backdrop Transitions */
+.drawer-backdrop {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.drawer-content {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Toast */
+#toast-container {
+  pointer-events: none;
+}
+.toast-msg {
+  pointer-events: auto;
+  animation: slideToastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes slideToastIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* VietQR dashed frame */
+.qr-container {
+  border: 2px dashed #0066FF;
+  background: #f8fafc;
+}
+
+/* Floating Action Button (FAB) */
+.fab-btn {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.fab-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.26);
+}
+
+/* Chat Widget Box */
+#chat-widget-box {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+}
+
+/* Order Countdown Box */
+.order-countdown-box {
+  background: linear-gradient(135deg, #0f172a 0%, #1e252b 100%);
+}
