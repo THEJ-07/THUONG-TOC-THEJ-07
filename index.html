@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THƯƠNG TỐC Express Tech - Hệ Thống Phụ Kiện Điện Thoại Giao 1 Giờ Biên Hòa</title>
+  <meta name="description" content="Website TMĐT chính hãng THƯƠNG TỐC Express Tech. Phụ kiện Anker, Ugreen, Baseus, Hoco giao hỏa tốc 30-60 phút tại Biên Hòa, bảo hành 1 đổi 1 tận nhà 12 tháng.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+
+  <!-- Google Fonts: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#0066FF',
+              700: '#0B5ED7',
+              800: '#0052cc',
+            },
+            slate: {
+              850: '#1e252b',
+              900: '#111827',
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <header class="sticky top-0 z-40 bg-white shadow-sm border-b border-slate-100">
+    <div class="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white text-xs py-2 px-4 overflow-hidden">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-2 overflow-hidden whitespace-nowrap">
+          <span class="bg-red-500 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider animate-pulse flex-shrink-0">
+            HỎA TỐC 1H
+          </span>
+          <div class="animate-marquee font-medium">
+            ⚡ GIAO SIÊU TỐC 30–60 PHÚT NỘI THÀNH BIÊN HÒA | BẢO HÀNH 1 ĐỔI 1 TẬN NHÀ 12 THÁNG | HOTLINE: <strong class="underline">1900-6868</strong> | CAM KẾT ĐỀN 200% NẾU PHÁT HIỆN HÀNG GIẢ
+          </div>
+        </div>
+        <div class="hidden lg:flex items-center gap-4 flex-shrink-0 text-[11px] font-medium opacity-90">
+          <span class="text-amber-300 font-semibold"><i class="fas fa-truck-fast"></i> Miễn phí giao 1H từ 200k</span>
+          <span class="opacity-50">|</span>
+          <div class="flex items-center gap-1.5 text-white">
+            <i class="fas fa-location-dot text-amber-400"></i> TP. Biên Hòa, Đồng Nai
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between gap-4">
+      
+      <!-- Logo Brand -->
+      <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center gap-3 group flex-shrink-0">
+        <div class="w-12 h-12 rounded-2xl overflow-hidden shadow-md border border-blue-100 bg-white p-0.5 flex items-center justify-center group-hover:scale-105 transition-transform">
+          <img src="assets/images/logo.jpg" alt="THƯƠNG TỐC Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-slate-900">
+              THƯƠNG <span class="text-blue-600">TỐC</span>
+            </span>
+            <span class="hidden sm:inline-block bg-blue-100 text-blue-700 text-[10px] font-extrabold px-1.5 py-0.5 rounded tracking-wide">
+              EXPRESS TECH
+            </span>
+          </div>
+          <p class="text-[10px] font-semibold text-slate-500 uppercase tracking-widest leading-none">
+            Phụ Kiện Điện Thoại Chính Hãng
+          </p>
+        </div>
+      </a>
+
+      <!-- Real-time Search Bar -->
+      <div class="flex-1 max-w-xl hidden md:block">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Tìm củ sạc GaN, cáp Anker, pin MagSafe, tai nghe, giá đỡ..."
+            class="w-full pl-11 pr-24 py-2.5 bg-slate-100 border border-slate-200 rounded-2xl text-xs sm:text-sm focus:bg-white focus:border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 transition"
+          >
+          <div class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400">
+            <i class="fas fa-search text-sm"></i>
+          </div>
+          <button 
+            onclick="navigateTo('shop')"
+            class="absolute right-1.5 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition shadow-sm"
+          >
+            Tìm Kiếm
+          </button>
+        </div>
+
+        <!-- Quick Tags -->
+        <div class="flex items-center gap-2 mt-1.5 text-[11px] text-slate-400 overflow-x-auto whitespace-nowrap scrollbar-none">
+          <span class="font-medium text-slate-500">Gợi ý nhanh:</span>
+          <button onclick="setQuickSearchTag('Ugreen 65W')" class="hover:text-blue-600 transition">Củ GaN 65W</button>
+          <span>•</span>
+          <button onclick="setQuickSearchTag('Anker')" class="hover:text-blue-600 transition">Cáp dù Anker</button>
+          <span>•</span>
+          <button onclick="setQuickSearchTag('MagSafe')" class="hover:text-blue-600 transition">Pin MagSafe</button>
+          <span>•</span>
+          <button onclick="setQuickSearchTag('Hoco EW04')" class="hover:text-blue-600 transition">Tai nghe TWS</button>
+          <span>•</span>
+          <button onclick="setQuickSearchTag('giá đỡ')" class="hover:text-blue-600 transition">Giá đỡ nhôm</button>
+        </div>
+      </div>
+
+      <!-- Action Widgets -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Account / Login Button -->
+        <button id="header-account-btn" onclick="navigateTo('account')" class="transition">
+          <div class="flex items-center gap-1.5 text-slate-700 font-bold text-xs bg-slate-100 hover:bg-slate-200 px-3 py-2 rounded-xl transition">
+            <i class="fas fa-user"></i>
+            <span>Tài Khoản</span>
+          </div>
+        </button>
+
+        <!-- Cart Button -->
+        <button 
+          id="cart-trigger-btn"
+          onclick="openCartDrawer()" 
+          class="relative flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl shadow-md shadow-blue-500/20 transition group"
+        >
+          <div class="relative">
+            <i class="fas fa-shopping-bag text-base group-hover:scale-110 transition-transform"></i>
+            <span class="cart-badge absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center border-2 border-white shadow">
+              0
+            </span>
+          </div>
+          <span class="text-xs font-bold">Giỏ Hàng</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- MULTI-PAGE SPA NAVIGATION BAR -->
+    <nav class="bg-slate-900 text-white text-xs border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between overflow-x-auto">
+        <div class="flex items-center space-x-1 sm:space-x-2 py-2 whitespace-nowrap">
+          
+          <!-- 1. Home Page -->
+          <button 
+            onclick="navigateTo('home')" 
+            data-page="home" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-bold transition flex items-center gap-1.5 active-nav"
+          >
+            <i class="fas fa-house text-xs"></i> Trang Chủ
+          </button>
+
+          <!-- 2. Shop / Catalog Page -->
+          <button 
+            onclick="navigateTo('shop')" 
+            data-page="shop" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-medium transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-store text-xs"></i> Cửa Hàng
+          </button>
+
+          <!-- 3. Flash Sale Page -->
+          <button 
+            onclick="navigateTo('flashsale')" 
+            data-page="flashsale" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-red-400 hover:text-red-300 font-bold transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-bolt text-xs text-amber-300 animate-bounce"></i> Flash Sale
+          </button>
+
+          <!-- 4. About Us Page -->
+          <button 
+            onclick="navigateTo('about')" 
+            data-page="about" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-medium transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-circle-info text-xs"></i> Giới Thiệu
+          </button>
+
+          <!-- 5. My Orders Page -->
+          <button 
+            onclick="navigateTo('orders')" 
+            data-page="orders" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-medium transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-box text-xs"></i> Đơn Hàng Của Tôi
+          </button>
+
+          <!-- 6. Checkout Page -->
+          <button 
+            onclick="navigateTo('checkout')" 
+            data-page="checkout" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-medium transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-credit-card text-xs"></i> Thanh Toán
+          </button>
+
+          <!-- 7. Account Page -->
+          <button 
+            onclick="navigateTo('account')" 
+            data-page="account" 
+            class="nav-btn px-3 py-1.5 rounded-lg text-slate-200 hover:text-white font-medium transition flex items-center gap-1.5"
+          >
+            <i class="fas fa-user-circle text-xs"></i> Tài Khoản
+          </button>
+
+        </div>
+
+        <div class="hidden lg:flex items-center gap-2 text-slate-400 text-[11px] py-2 whitespace-nowrap">
+          <span class="text-blue-400 font-bold uppercase">Slogan:</span>
+          <span class="text-white font-semibold">"1 CHẠM – 1 GIỜ – 1 NIỀM TIN"</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       PAGE 1: TRANG CHỦ (HOME PAGE)
+       ========================================================================= -->
+  <section id="page-home" class="spa-page active-page">
+    
+    <!-- Hero Banner Slider -->
+    <div class="relative bg-slate-900 text-white overflow-hidden min-h-[460px] lg:min-h-[500px] flex items-center">
+      
+      <!-- Slide 1 -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-100 flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=1800&q=80" alt="Sạc Cấp Cứu" class="absolute inset-0 w-full h-full object-cover opacity-35 object-right">
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-600/30 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur">
+              <i class="fas fa-bolt text-amber-400 animate-bounce"></i> DỊCH VỤ ĐỘC QUYỀN BIÊN HÒA
+            </div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4">
+              SẠC CẤP CỨU <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-white">
+                GIAO 1 GIỜ TẬN TAY
+              </span>
+            </h1>
+            <p class="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed max-w-xl">
+              Hết pin giữa chừng tại TP. Biên Hòa? Đặt ngay trên THƯƠNG TỐC, shipper hỏa tốc giao tận cửa nội thành trong <strong>30–60 phút</strong>!
+            </p>
+            <div class="flex flex-wrap items-center gap-3">
+              <button onclick="navigateTo('shop')" class="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-2xl shadow-lg shadow-blue-600/30 transition flex items-center gap-2 pulse-primary">
+                <i class="fas fa-bag-shopping"></i> Mua Ngay 1 Chạm
+              </button>
+              <button onclick="navigateTo('flashsale')" class="px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm rounded-2xl backdrop-blur transition flex items-center gap-2">
+                <i class="fas fa-fire text-red-400"></i> Xem Flash Sale 50%
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide absolute inset-0 transition-opacity duration-700 opacity-0 pointer-events-none flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-transparent z-10"></div>
+        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=1800&q=80" alt="Flash Sale 50%" class="absolute inset-0 w-full h-full object-cover opacity-35 object-right">
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 py-12 w-full">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/30 border border-red-400/40 text-red-300 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur">
+              <i class="fas fa-tags text-amber-300"></i> KHUYẾN MÃI KHAI TRƯƠNG
+            </div>
+            <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4">
+              GIẢM ĐẾN 50% <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-300 to-white">
+                PHỤ KIỆN CHÍNH HÃNG
+              </span>
+            </h2>
+            <p class="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed max-w-xl">
+              Anker, Ugreen, Baseus, Hoco... Củ GaN 65W, Cáp bọc dù, Pin MagSafe giá chỉ từ <strong>69.000đ</strong>.
+            </p>
+            <button onclick="navigateTo('flashsale')" class="px-6 py-3.5 bg-red-600 hover:bg-red-500 text-white font-bold text-sm rounded-2xl shadow-lg shadow-red-600/30 transition flex items-center gap-2">
+              <i class="fas fa-bolt text-amber-300"></i> Săn Deal Flash Sale
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-blue-600 text-white flex items-center justify-center transition border border-white/10">
+        <i class="fas fa-chevron-left text-xs"></i>
+      </button>
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-blue-600 text-white flex items-center justify-center transition border border-white/10">
+        <i class="fas fa-chevron-right text-xs"></i>
+      </button>
+
+      <!-- Dots -->
+      <div class="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
+        <button onclick="goToSlide(0)" class="hero-dot h-2.5 rounded-full transition-all w-8 bg-blue-600"></button>
+        <button onclick="goToSlide(1)" class="hero-dot h-2.5 rounded-full transition-all w-2.5 bg-white/50"></button>
+      </div>
+    </div>
+
+    <!-- 4 Brand Pillars -->
+    <div class="relative -mt-6 z-30 max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">GIAO NHANH 1H</h4>
+            <p class="text-[11px] text-slate-500">Phục vụ hỏa tốc nội thành Biên Hòa</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fas fa-shield-check"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">CHÍNH HÃNG 100%</h4>
+            <p class="text-[11px] text-slate-500">Ugreen, Anker, Baseus, Hoco</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fas fa-hand-pointer"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">CHỈ 1 CÚ CHẠM</h4>
+            <p class="text-[11px] text-slate-500">Đặt hàng siêu tốc, không cần đăng ký</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-100 flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg flex-shrink-0">
+            <i class="fas fa-arrows-rotate"></i>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-800">ĐỔI TRẢ TẬN NHÀ</h4>
+            <p class="text-[11px] text-slate-500">Bảo hành 1 đổi 1 suốt 12 tháng</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Home Flash Sale Preview -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-2">
+          <span class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-xs animate-bounce">
+            <i class="fas fa-bolt"></i>
+          </span>
+          <div>
+            <h3 class="text-lg sm:text-xl font-black text-slate-900">FLASH SALE ĐANG DIỄN RA</h3>
+            <p class="text-xs text-slate-500">Số lượng có hạn trong ngày</p>
+          </div>
+        </div>
+        <button onclick="navigateTo('flashsale')" class="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1">
+          Xem Tất Cả Flash Sale <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div id="home-flashsale-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"></div>
+    </div>
+
+    <!-- Home Bestsellers Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 border-t border-slate-200">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <span class="text-xs font-bold text-blue-600 uppercase">SẢN PHẨM NỔI BẬT</span>
+          <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">TOP PHỤ KIỆN BÁN CHẠY NHẤT</h3>
+        </div>
+        <button onclick="navigateTo('shop')" class="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+          Xem Cửa Hàng <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <div id="home-bestsellers-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4"></div>
+    </div>
+
+    <!-- Customer Feedback Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-t border-slate-200">
+      <div class="text-center max-w-lg mx-auto mb-8">
+        <span class="text-xs font-bold text-blue-600 uppercase">FEEDBACK KHÁCH HÀNG</span>
+        <h3 class="text-xl font-black text-slate-900 mt-1">BIÊN HÒA TIN DÙNG THƯƠNG TỐC</h3>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-xs space-y-2">
+          <div class="flex text-amber-400 gap-0.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-slate-600 italic">"Mình ở Trảng Dài đặt củ sạc GaN 65W Ugreen đúng 30 phút sau shipper mang đến tận nhà, có cáp test thử rồi mới thu tiền COD. Rất ưng ý!"</p>
+          <p class="font-bold text-slate-800">— Anh Minh Trí (P. Trảng Dài)</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-xs space-y-2">
+          <div class="flex text-amber-400 gap-0.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-slate-600 italic">"Cáp Anker dùng 3 tháng lỡ bị kẹt cửa xe, nhắn cho shop thì có anh kỹ thuật ghé đổi sợi mới 100% tận nơi. Bảo hành 1 đổi 1 thật sự uy tín."</p>
+          <p class="font-bold text-slate-800">— Chị Bích Ngọc (P. Tân Phong)</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm text-xs space-y-2">
+          <div class="flex text-amber-400 gap-0.5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="text-slate-600 italic">"Quét VietQR tự động khớp tiền và tạo đơn luôn trong 3 giây. Giao hàng hỏa tốc trong 1 giờ chuẩn như cam kết!"</p>
+          <p class="font-bold text-slate-800">— Bạn Quốc Huy (P. Tam Hiệp)</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =========================================================================
+       PAGE 2: TRANG CỬA HÀNG / SẢN PHẨM (SHOP / CATALOG)
+       ========================================================================= -->
+  <section id="page-shop" class="spa-page">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      
+      <!-- Shop Header -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-6">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 uppercase tracking-wider mb-1">
+            <i class="fas fa-store"></i> TẤT CẢ PHỤ KIỆN CÔNG NGHỆ
+          </div>
+          <div class="flex items-baseline gap-2">
+            <h1 class="text-2xl font-black text-slate-900 tracking-tight">CỬA HÀNG THƯƠNG TỐC</h1>
+            <span id="shop-products-count" class="text-xs font-bold text-slate-400">(22 sản phẩm)</span>
+          </div>
+        </div>
+
+        <!-- Sort Select -->
+        <div class="flex items-center gap-2">
+          <label for="sort-select" class="text-xs font-bold text-slate-600 whitespace-nowrap">Sắp xếp:</label>
+          <select 
+            id="sort-select" 
+            class="bg-white border border-slate-200 text-xs font-bold rounded-xl px-3 py-2 focus:outline-none focus:border-blue-600 shadow-sm cursor-pointer"
+          >
+            <option value="bestseller">🔥 Bán chạy nhất</option>
+            <option value="latest">✨ Mới nhất</option>
+            <option value="price-asc">⬆️ Giá tăng dần</option>
+            <option value="price-desc">⬇️ Giá giảm dần</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none mb-3">
+        <button onclick="filterByCategory('all')" data-cat="all" class="cat-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition bg-blue-600 text-white shadow-md">
+          Tất Cả
+        </button>
+        <button onclick="filterByCategory('cu-sac-cap')" data-cat="cu-sac-cap" class="cat-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          ⚡ Củ Sạc & Cáp
+        </button>
+        <button onclick="filterByCategory('pin-du-phong')" data-cat="pin-du-phong" class="cat-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          🔋 Pin Dự Phòng
+        </button>
+        <button onclick="filterByCategory('tai-nghe-am-thanh')" data-cat="tai-nghe-am-thanh" class="cat-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          🎧 Tai Nghe & Âm Thanh
+        </button>
+        <button onclick="filterByCategory('phu-kien-khac')" data-cat="phu-kien-khac" class="cat-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200">
+          📱 Phụ Kiện Khác
+        </button>
+      </div>
+
+      <!-- Price Range Filter Bar -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 text-xs">
+        <span class="text-slate-500 font-bold whitespace-nowrap flex items-center gap-1">
+          <i class="fas fa-filter text-blue-600"></i> Lọc theo giá:
+        </span>
+        <button onclick="filterByPriceRange('all')" data-price="all" class="price-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold transition bg-slate-900 text-white">
+          Tất Cả Mức Giá
+        </button>
+        <button onclick="filterByPriceRange('under-100')" data-price="under-100" class="price-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium transition bg-slate-100 text-slate-600 hover:bg-slate-200">
+          Dưới 100k
+        </button>
+        <button onclick="filterByPriceRange('100-300')" data-price="100-300" class="price-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium transition bg-slate-100 text-slate-600 hover:bg-slate-200">
+          100k - 300k
+        </button>
+        <button onclick="filterByPriceRange('above-300')" data-price="above-300" class="price-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium transition bg-slate-100 text-slate-600 hover:bg-slate-200">
+          Trên 300k
+        </button>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="shop-products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5"></div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE 3: TRANG FLASH SALE (FLASH SALE PAGE)
+       ========================================================================= -->
+  <section id="page-flashsale" class="spa-page">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      
+      <!-- Flash Sale Header Box -->
+      <div class="bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 text-white p-6 sm:p-8 rounded-3xl shadow-xl mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-1.5 bg-white/20 text-white text-xs font-black px-2.5 py-1 rounded-full uppercase mb-2">
+            <i class="fas fa-fire text-amber-300"></i> GIẢM GIÁ SỐC HỎA TỐC
+          </div>
+          <h1 class="text-2xl sm:text-4xl font-black">CHƯƠNG TRÌNH FLASH SALE</h1>
+          <p class="text-xs sm:text-sm text-red-100 mt-1">Săn deal phụ kiện chính hãng giảm tới 54% - Giao hỏa tốc 1 giờ tại Biên Hòa</p>
+        </div>
+
+        <!-- Big Countdown Timer -->
+        <div class="flex items-center gap-2 font-mono text-slate-900 font-black">
+          <div class="bg-white px-3 py-2 rounded-2xl text-center shadow">
+            <span id="fspage-hours" class="text-xl sm:text-2xl">02</span>
+            <span class="block text-[9px] text-slate-500 font-sans uppercase">Giờ</span>
+          </div>
+          <span class="text-white font-bold text-xl">:</span>
+          <div class="bg-white px-3 py-2 rounded-2xl text-center shadow">
+            <span id="fspage-mins" class="text-xl sm:text-2xl">45</span>
+            <span class="block text-[9px] text-slate-500 font-sans uppercase">Phút</span>
+          </div>
+          <span class="text-white font-bold text-xl">:</span>
+          <div class="bg-white px-3 py-2 rounded-2xl text-center shadow">
+            <span id="fspage-secs" class="text-xl sm:text-2xl">15</span>
+            <span class="block text-[9px] text-slate-500 font-sans uppercase">Giây</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flash Sale Products Grid -->
+      <div id="flashsale-products-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5"></div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE 4: TRANG GIỚI THIỆU (ABOUT US)
+       ========================================================================= -->
+  <section id="page-about" class="spa-page">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      
+      <!-- Title -->
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">VỀ CHÚNG TÔI</span>
+        <h1 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">THƯƠNG TỐC EXPRESS TECH</h1>
+        <p class="text-sm text-slate-500 mt-2">Mô hình phân phối phụ kiện điện thoại hỏa tốc 60 phút đầu tiên tại TP. Biên Hòa</p>
+      </div>
+
+      <!-- Content Cards -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-sm space-y-6 text-slate-700 text-sm leading-relaxed mb-6">
+        <div>
+          <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+            <i class="fas fa-building text-blue-600"></i> CÔNG TY TNHH THƯƠNG MẠI & DỊCH VỤ CÔNG NGHỆ THƯƠNG TỐC
+          </h3>
+          <p>
+            Được thành lập với mục tiêu giải quyết nỗi đau lớn nhất của người dùng công nghệ tại TP. Biên Hòa: <strong>Hết pin giữa chừng, cáp sạc đứt gãy khẩn cấp khi đang làm việc</strong> mà phải chờ đặt hàng từ 2-4 ngày trên các sàn thông thường.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+          <div class="bg-blue-50/60 p-4 rounded-2xl border border-blue-100">
+            <h4 class="font-bold text-blue-700 mb-1">⚡ Sứ Mệnh 60 Phút:</h4>
+            <p class="text-xs text-slate-600">Đội ngũ shipper hỏa tốc phủ sóng khắp các phường Trảng Dài, Tân Phong, Tam Hiệp, Hố Nai, Quyết Thắng... cam kết giao tận tay quý khách từ 30 đến 60 phút.</p>
+          </div>
+          <div class="bg-emerald-50/60 p-4 rounded-2xl border border-emerald-100">
+            <h4 class="font-bold text-emerald-700 mb-1">🛡️ Bảo Hành 1 Đổi 1 Tận Nhà 12 Tháng:</h4>
+            <p class="text-xs text-slate-600">Không cần gửi sản phẩm đi bảo hành phức tạp. Kỹ thuật viên THƯƠNG TỐC sẽ mang sản phẩm mới tinh đến đổi ngay tại cửa nhà bạn trong 60 phút.</p>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Quy Trình Kiểm Tra Hàng Trước Khi Nhận</h3>
+          <p>
+            Quý khách hoàn toàn được quyền mở hộp, cắm thử sạc vào thiết bị để kiểm tra tốc độ sạc và tính tương thích trước khi thanh toán cho shipper.
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100">
+          <h4 class="font-bold text-slate-900 mb-2">Thông Tin Trụ Sở Chính:</h4>
+          <p class="text-xs text-slate-600 space-y-1">
+            📍 <strong>Địa chỉ:</strong> 168 Đường Đồng Khởi, Phường Tân Phong, TP. Biên Hòa, Tỉnh Đồng Nai.<br>
+            📞 <strong>Hotline Hỏa Tốc:</strong> 1900-6868 (Trực 24/7)<br>
+            ✉️ <strong>Email:</strong> hotro@thuongtoc.vn<br>
+            🏢 <strong>Mã Số Thuế:</strong> 3603998868
+          </p>
+        </div>
+      </div>
+
+      <!-- Action -->
+      <div class="text-center">
+        <button onclick="navigateTo('shop')" class="px-8 py-3.5 bg-blue-600 text-white rounded-2xl font-bold text-xs shadow-lg shadow-blue-500/25 hover:bg-blue-700 transition">
+          Khám Phá Cửa Hàng Phụ Kiện Ngay
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE 5: TRANG ĐƠN HÀNG CỦA TÔI (MY ORDERS / ORDER TRACKING)
+       ========================================================================= -->
+  <section id="page-orders" class="spa-page">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+        <div>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">LỊCH SỬ MUA HÀNG</span>
+          <h1 class="text-2xl font-black text-slate-900">ĐƠN HÀNG ĐÃ ĐẶT</h1>
+        </div>
+        <button onclick="navigateTo('shop')" class="text-xs font-bold px-4 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition">
+          + Mua Thêm Phụ Kiện
+        </button>
+      </div>
+
+      <!-- Orders Container -->
+      <div id="orders-list-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE 6: TRANG ĐẶT HÀNG & THANH TOÁN (CHECKOUT)
+       ========================================================================= -->
+  <section id="page-checkout" class="spa-page">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      
+      <div class="mb-6">
+        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">THANH TOÁN 1 CHẠM</span>
+        <h1 class="text-2xl font-black text-slate-900">XÁC NHẬN ĐẶT HÀNG</h1>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6 sm:p-8">
+        <form id="checkout-form" class="space-y-6">
+          
+          <!-- 1. Delivery Options -->
+          <div>
+            <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+              1. Hình Thức Vận Chuyển:
+            </label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <button 
+                type="button" 
+                id="btn-delivery-express" 
+                onclick="setDeliveryMethod('express_bienhoa')" 
+                class="p-3.5 border-2 border-blue-600 bg-blue-50/60 rounded-2xl text-left flex items-start gap-3 transition"
+              >
+                <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm flex-shrink-0">
+                  <i class="fas fa-bolt text-amber-300"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-900">Giao Hỏa Tốc 30-60 Phút</span>
+                    <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">Biên Hòa</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-0.5">
+                    15.000đ (Miễn phí từ 200.000đ). Shipper trực tiếp tại Biên Hòa.
+                  </p>
+                </div>
+              </button>
+
+              <button 
+                type="button" 
+                id="btn-delivery-standard" 
+                onclick="setDeliveryMethod('standard')" 
+                class="p-3.5 border-2 border-slate-200 rounded-2xl text-left flex items-start gap-3 hover:border-slate-300 transition"
+              >
+                <div class="w-8 h-8 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center text-sm flex-shrink-0">
+                  <i class="fas fa-box"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-slate-900">Giao Tiêu Chuẩn</span>
+                    <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">Toàn quốc</span>
+                  </div>
+                  <p class="text-[11px] text-slate-500 mt-0.5">
+                    30.000đ (GHTK / SPX giao trong 2 - 3 ngày).
+                  </p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Customer Information -->
+          <div>
+            <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+              2. Thông Tin Người Nhận:
+            </label>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label class="block text-[11px] text-slate-500 mb-1">Họ và tên *</label>
+                <input type="text" id="checkout-name" required placeholder="Vd: Nguyễn Văn Hiệu" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600">
+              </div>
+              <div>
+                <label class="block text-[11px] text-slate-500 mb-1">Số điện thoại nhận hàng *</label>
+                <input type="tel" id="checkout-phone" required placeholder="Vd: 0912345678" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600">
+              </div>
+              <div>
+                <label class="block text-[11px] text-slate-500 mb-1">Khu vực giao *</label>
+                <select id="checkout-region" onchange="toggleWardDropdown(this.value)" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600">
+                  <option value="bienhoa">Nội thành TP. Biên Hòa (Giao 30-60 Phút)</option>
+                  <option value="other">Khu vực khác / Tỉnh thành khác</option>
+                </select>
+              </div>
+              <div id="checkout-ward-container">
+                <label class="block text-[11px] text-slate-500 mb-1">Phường tại Biên Hòa</label>
+                <select id="checkout-ward" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600"></select>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-[11px] text-slate-500 mb-1">Địa chỉ chi tiết (Số nhà, tên đường, khu phố) *</label>
+                <input type="text" id="checkout-address" required placeholder="Vd: 168 Đường Đồng Khởi, Phường Tân Phong" class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600">
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-[11px] text-slate-500 mb-1">Ghi chú (Tùy chọn)</label>
+                <input type="text" id="checkout-note" placeholder="Vd: Gọi trước khi đến, mang theo cáp test thử..." class="w-full px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-blue-600">
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Voucher Selector -->
+          <div>
+            <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+              3. Mã Giảm Giá & Voucher:
+            </label>
+            <div id="vouchers-chips-container" class="space-y-2 mb-3"></div>
+            <div class="flex gap-2">
+              <input type="text" id="voucher-input" placeholder="Nhập THUONGTOC10, FREESHIP1H, FLASHSALE50" class="flex-1 px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs uppercase focus:outline-none focus:border-blue-600">
+              <button type="button" onclick="applyVoucher()" class="px-4 py-2 bg-slate-900 hover:bg-black text-white rounded-xl text-xs font-bold transition">
+                Áp Dụng
+              </button>
+            </div>
+          </div>
+
+          <!-- 4. Payment Methods -->
+          <div>
+            <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+              4. Phương Thức Thanh Toán:
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+              <label id="pay-method-cod" onclick="setPaymentMethod('cod')" class="p-3 border rounded-xl flex items-center gap-2 cursor-pointer transition border-slate-200 hover:border-blue-300">
+                <input type="radio" name="pay-method" id="radio-pay-cod" class="text-blue-600">
+                <span class="text-xs font-bold text-slate-800">Tiền mặt (COD)</span>
+              </label>
+
+              <label id="pay-method-vietqr" onclick="setPaymentMethod('vietqr')" class="p-3 border-2 border-blue-600 bg-blue-50/50 rounded-xl flex items-center gap-2 cursor-pointer transition">
+                <input type="radio" name="pay-method" id="radio-pay-vietqr" checked class="text-blue-600">
+                <span class="text-xs font-black text-blue-700 flex items-center gap-1">
+                  <i class="fas fa-qrcode"></i> Quét VietQR
+                </span>
+              </label>
+
+              <label id="pay-method-momo" onclick="setPaymentMethod('momo')" class="p-3 border rounded-xl flex items-center gap-2 cursor-pointer transition border-slate-200 hover:border-pink-300">
+                <input type="radio" name="pay-method" id="radio-pay-momo" class="text-pink-600">
+                <span class="text-xs font-bold text-slate-800">Ví MoMo</span>
+              </label>
+
+              <label id="pay-method-zalopay" onclick="setPaymentMethod('zalopay')" class="p-3 border rounded-xl flex items-center gap-2 cursor-pointer transition border-slate-200 hover:border-blue-300">
+                <input type="radio" name="pay-method" id="radio-pay-zalopay" class="text-blue-500">
+                <span class="text-xs font-bold text-slate-800">ZaloPay</span>
+              </label>
+
+              <label id="pay-method-vnpay" onclick="setPaymentMethod('vnpay')" class="p-3 border rounded-xl flex items-center gap-2 cursor-pointer transition border-slate-200 hover:border-blue-300">
+                <input type="radio" name="pay-method" id="radio-pay-vnpay" class="text-blue-700">
+                <span class="text-xs font-bold text-slate-800">VNPAY-QR</span>
+              </label>
+            </div>
+
+            <!-- Dynamic VietQR Box -->
+            <div id="vietqr-box" class="mt-4 p-4 qr-container rounded-2xl">
+              <div class="flex flex-col sm:flex-row items-center gap-4">
+                <div class="w-36 h-36 bg-white p-2 rounded-xl shadow border border-slate-200 flex-shrink-0">
+                  <img id="vietqr-image" src="" alt="Mã VietQR Động" class="w-full h-full object-contain">
+                </div>
+                <div class="text-xs space-y-1.5 flex-1">
+                  <div class="flex items-center gap-1.5 text-blue-700 font-bold">
+                    <i class="fas fa-building-columns"></i>
+                    <span>MB BANK (Ngân hàng Quân Đội)</span>
+                  </div>
+                  <p class="text-slate-600">Chủ tài khoản: <strong>CONG TY TNHH TM DV CN THUONG TOC</strong></p>
+                  <div class="flex items-center gap-2">
+                    <span class="text-slate-600">STK: <strong class="text-slate-900 font-mono text-sm font-bold">888899996868</strong></span>
+                    <button type="button" onclick="copyToClipboard('888899996868', 'Đã copy STK MB Bank!')" class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-bold hover:bg-blue-200 transition">Copy</button>
+                  </div>
+                  <p class="text-slate-600">Nội dung CK: <strong id="vietqr-transfer-desc" class="font-mono text-blue-600 font-bold">TT-EXPRESS</strong></p>
+                  <p class="text-slate-600">Số tiền: <strong id="vietqr-amount" class="text-red-600 font-black text-sm">0đ</strong></p>
+                  <p class="text-[11px] text-emerald-600 font-semibold italic">⚡ Quét mã thanh toán tự động xác nhận trong 5 giây.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. Items Summary & Totals -->
+          <div class="border-t border-slate-100 pt-4">
+            <label class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+              Sản Phẩm Trong Đơn Hàng:
+            </label>
+            <div id="checkout-items-list" class="space-y-1 mb-3"></div>
+
+            <div class="bg-slate-50 p-4 rounded-2xl space-y-2 text-xs text-slate-600">
+              <div class="flex justify-between">
+                <span>Tạm tính hàng hóa:</span>
+                <span id="checkout-subtotal" class="font-bold text-slate-900">0đ</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Phí giao hàng:</span>
+                <span id="checkout-shipping" class="font-bold text-emerald-600">0đ</span>
+              </div>
+              <div id="checkout-discount-row" class="flex justify-between text-red-600 hidden">
+                <span>Voucher giảm giá:</span>
+                <span id="checkout-discount" class="font-black">-0đ</span>
+              </div>
+              <div class="flex justify-between pt-2 border-t border-slate-200 text-sm">
+                <span class="font-bold text-slate-900">Tổng thanh toán:</span>
+                <span id="checkout-final-total" class="font-black text-blue-600 text-base">0đ</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Order Button -->
+          <button 
+            type="submit" 
+            class="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-2xl font-black text-sm uppercase tracking-wider shadow-xl shadow-blue-500/25 transition flex items-center justify-center gap-2 pulse-primary"
+          >
+            <i class="fas fa-bolt text-amber-300"></i>
+            <span>XÁC NHẬN ĐẶT HÀNG</span>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PAGE 7: TRANG TÀI KHOẢN (ACCOUNT & PROFILE)
+       ========================================================================= -->
+  <section id="page-account" class="spa-page">
+    <div class="max-w-xl mx-auto px-4 sm:px-6 py-10">
+      
+      <!-- Account Profile View (When logged in) -->
+      <div id="account-profile-view" class="hidden bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        <div class="text-center mb-6">
+          <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-3xl font-black mx-auto mb-3">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h2 id="profile-name" class="text-xl font-black text-slate-900">Khách Hàng THƯƠNG TỐC</h2>
+          <p class="text-xs text-slate-400 mt-0.5">Thành viên thân thiết tại Biên Hòa</p>
+        </div>
+
+        <div class="bg-slate-50 p-4 rounded-2xl space-y-3 text-xs mb-6">
+          <div class="flex justify-between">
+            <span class="text-slate-500">Số điện thoại:</span>
+            <span id="profile-phone" class="font-bold text-slate-800"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-500">Email:</span>
+            <span id="profile-email" class="font-bold text-slate-800"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-slate-500">Tổng đơn hàng đã đặt:</span>
+            <span id="profile-orders-count" class="font-black text-blue-600">0</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <button onclick="navigateTo('orders')" class="py-3 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700 transition">
+            Xem Đơn Hàng Của Tôi
+          </button>
+          <button onclick="logoutUser()" class="py-3 border border-red-300 text-red-600 rounded-xl text-xs font-bold hover:bg-red-50 transition">
+            Đăng Xuất
+          </button>
+        </div>
+      </div>
+
+      <!-- Auth Form View (When not logged in) -->
+      <div id="account-auth-view" class="bg-white rounded-3xl border border-slate-100 p-6 sm:p-8 shadow-sm">
+        
+        <!-- Tab Switcher -->
+        <div class="flex border-b border-slate-100 mb-6 text-sm font-bold">
+          <button id="tab-btn-login" onclick="switchAuthTab('login')" class="flex-1 py-3 text-blue-600 border-b-2 border-blue-600 transition">
+            Đăng Nhập
+          </button>
+          <button id="tab-btn-register" onclick="switchAuthTab('register')" class="flex-1 py-3 text-slate-500 hover:text-slate-800 transition">
+            Đăng Ký
+          </button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="auth-login-form" onsubmit="handleLoginSubmit(event)" class="space-y-4 text-xs">
+          <div>
+            <label class="block text-slate-600 mb-1 font-medium">Số điện thoại *</label>
+            <input type="tel" id="login-phone" required placeholder="0912345678" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1 font-medium">Mật khẩu *</label>
+            <input type="password" id="login-password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+          </div>
+          <button type="submit" class="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition shadow-md shadow-blue-500/20">
+            Đăng Nhập Ngay
+          </button>
+          <p class="text-center text-[11px] text-slate-400">
+            (Có thể đăng nhập nhanh bằng số điện thoại bất kỳ để lưu lịch sử đơn hàng)
+          </p>
+        </form>
+
+        <!-- Register Form -->
+        <form id="auth-reg-form" onsubmit="handleRegisterSubmit(event)" class="hidden space-y-4 text-xs">
+          <div>
+            <label class="block text-slate-600 mb-1 font-medium">Họ và tên của bạn *</label>
+            <input type="text" id="reg-name" required placeholder="Vd: Nguyễn Văn Hiệu" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1 font-medium">Số điện thoại *</label>
+            <input type="tel" id="reg-phone" required placeholder="0912345678" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1 font-medium">Mật khẩu *</label>
+            <input type="password" id="reg-password" required placeholder="••••••••" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-600">
+          </div>
+          <button type="submit" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition shadow-md shadow-emerald-500/20">
+            Tạo Tài Khoản Mới
+          </button>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PRODUCT DETAIL MODAL (QUICK VIEW)
+       ========================================================================= -->
+  <div id="quickview-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-sm p-4 flex items-center justify-center">
+    <div class="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 my-8 animate-fadeIn">
+      
+      <button onclick="closeProductQuickView()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+
+      <div class="grid md:grid-cols-2">
+        <div class="p-6 bg-slate-50 flex flex-col items-center justify-center relative">
+          <img id="qv-image" src="" alt="Sản phẩm" class="max-h-80 w-auto object-contain rounded-2xl shadow-sm">
+          <div class="mt-4 flex items-center gap-2 text-xs text-emerald-600 font-bold bg-white px-3 py-1.5 rounded-full border border-emerald-100 shadow-sm">
+            <i class="fas fa-shield-alt"></i>
+            <span>Bảo hành 12 tháng 1 đổi 1 tận nhà</span>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-7 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2 flex-wrap">
+              <span id="qv-brand" class="text-xs font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded"></span>
+              <span id="qv-power-badge" class="text-xs font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded"></span>
+              <span id="qv-discount-badge" class="text-xs font-black text-red-600 bg-red-50 px-2 py-0.5 rounded"></span>
+            </div>
+
+            <h2 id="qv-title" class="text-base sm:text-lg font-black text-slate-900 leading-snug"></h2>
+
+            <div class="flex items-center gap-1.5 text-xs text-amber-500 font-bold my-2">
+              <i class="fas fa-star text-xs"></i>
+              <span id="qv-rating">5.0</span>
+              <span id="qv-reviews" class="text-slate-400 font-normal"></span>
+            </div>
+
+            <div class="flex items-baseline gap-2.5 my-3 p-3 bg-blue-50/50 rounded-2xl border border-blue-100">
+              <span id="qv-price" class="text-2xl font-black text-blue-600"></span>
+              <span id="qv-original-price" class="text-sm text-slate-400 line-through"></span>
+            </div>
+
+            <p id="qv-desc" class="text-xs text-slate-600 leading-relaxed mb-4"></p>
+
+            <div class="mb-4">
+              <label class="block text-xs font-bold text-slate-700 mb-1.5">Chọn màu sắc / phân loại:</label>
+              <div id="qv-colors-container" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="flex items-center gap-3 mb-4">
+              <label class="text-xs font-bold text-slate-700">Số lượng:</label>
+              <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden bg-slate-50">
+                <button type="button" onclick="changeDetailQty(-1)" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-200 text-xs font-bold">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <input id="qv-qty-input" type="number" readonly value="1" class="w-10 text-center text-xs font-bold bg-transparent text-slate-800">
+                <button type="button" onclick="changeDetailQty(1)" class="w-8 h-8 flex items-center justify-center text-slate-600 hover:bg-slate-200 text-xs font-bold">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 mb-4">
+              <p class="text-[11px] font-bold text-slate-800 uppercase mb-1">Thông số kỹ thuật:</p>
+              <div id="qv-specs" class="space-y-0.5"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+            <button type="button" onclick="addDetailProductToCart()" class="py-3 px-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 rounded-2xl text-xs font-bold transition flex items-center justify-center gap-1.5">
+              <i class="fas fa-cart-plus text-sm"></i> Thêm Vào Giỏ
+            </button>
+            <button type="button" onclick="buyNowDetailProduct()" class="py-3 px-3 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-xs font-bold shadow-lg shadow-blue-500/25 transition flex items-center justify-center gap-1.5">
+              <i class="fas fa-bolt text-amber-300"></i> Mua Ngay
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SLIDE-OVER SHOPPING CART DRAWER
+       ========================================================================= -->
+  <div id="cart-backdrop" onclick="closeCartDrawer()" class="drawer-backdrop fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="cart-drawer" class="drawer-content fixed top-0 right-0 bottom-0 w-full max-w-md bg-white z-50 shadow-2xl flex flex-col translate-x-full transition-transform duration-300">
+    <div class="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center text-xs">
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold text-slate-900">Giỏ Hàng Của Bạn</h3>
+          <p class="text-[11px] text-slate-400">Giao siêu tốc 30–60 phút nội thành Biên Hòa</p>
+        </div>
+      </div>
+      <button onclick="closeCartDrawer()" class="w-8 h-8 rounded-full hover:bg-slate-200 text-slate-500 flex items-center justify-center transition">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="p-3 bg-blue-50/70 border-b border-blue-100">
+      <div class="flex items-center justify-between text-xs mb-1.5" id="cart-freeship-text">
+        <span>Mua thêm để freeship hỏa tốc 1h</span>
+      </div>
+      <div class="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+        <div id="cart-freeship-progress" class="bg-blue-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <div id="cart-drawer-items" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+
+    <div id="cart-drawer-footer" class="p-4 border-t border-slate-200 bg-slate-50">
+      <div class="flex items-center justify-between text-sm mb-3">
+        <span class="text-slate-500 font-medium">Tạm tính:</span>
+        <span id="cart-drawer-subtotal" class="font-black text-slate-900 text-base">0đ</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2">
+        <button onclick="closeCartDrawer(); navigateTo('shop')" class="py-2.5 px-3 border border-slate-300 text-slate-700 rounded-xl text-xs font-bold hover:bg-slate-200 transition">
+          Mua Thêm
+        </button>
+        <button onclick="closeCartDrawer(); navigateTo('checkout')" class="py-2.5 px-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md shadow-blue-500/20 transition flex items-center justify-center gap-1.5">
+          <span>Thanh Toán</span>
+          <i class="fas fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       BONG BÓNG CHAT LIVE (LIVE CHAT WIDGET)
+       ========================================================================= -->
+  <div class="fixed bottom-6 right-5 z-40 flex flex-col items-end gap-3">
+    <!-- Hotline -->
+    <a href="tel:19006868" class="fab-btn w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center text-lg pulse-danger" title="Gọi Hotline 1900-6868">
+      <i class="fas fa-phone"></i>
+    </a>
+    
+    <!-- Zalo -->
+    <a href="https://zalo.me" target="_blank" rel="noopener noreferrer" class="fab-btn w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center text-xs font-black shadow-md" title="Chat Zalo">
+      Zalo
+    </a>
+
+    <!-- Bong bóng Chat Tròn -->
+    <button onclick="toggleChatWidget()" class="fab-btn w-14 h-14 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex items-center justify-center text-xl shadow-2xl pulse-primary relative" title="Hỗ Trợ Trực Tuyến 24/7">
+      <i class="fas fa-comment-dots"></i>
+      <span class="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-white"></span>
+    </button>
+  </div>
+
+  <!-- Khung Chat Trực Tuyến -->
+  <div id="chat-widget-box" class="hidden fixed bottom-24 right-5 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-slate-200 z-50 overflow-hidden flex flex-col max-h-[500px]">
+    <div class="p-3.5 bg-gradient-to-r from-blue-700 to-indigo-700 text-white flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="relative">
+          <img src="assets/images/logo.jpg" alt="Admin" class="w-8 h-8 rounded-full border border-white/50 object-cover">
+          <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-white"></span>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold leading-tight">Hỗ Trợ Siêu Tốc THƯƠNG TỐC</h4>
+          <p class="text-[10px] text-blue-200 leading-none mt-0.5">Trực tuyến tại TP. Biên Hòa</p>
+        </div>
+      </div>
+      <button onclick="toggleChatWidget()" class="text-white/80 hover:text-white p-1">
+        <i class="fas fa-times text-sm"></i>
+      </button>
+    </div>
+
+    <div id="chat-messages-container" class="flex-1 p-3.5 overflow-y-auto space-y-3 bg-slate-50 min-h-[220px]">
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] flex-shrink-0">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="bg-white border border-slate-200 text-slate-800 text-xs rounded-2xl rounded-tl-none p-3 shadow-sm leading-relaxed max-w-[85%]">
+          👋 Xin chào bạn! Đội hỗ trợ hỏa tốc THƯƠNG TỐC tại Biên Hòa sẵn sàng tư vấn củ sạc, cáp sạc, pin dự phòng và giao hàng trong 60 phút cho bạn ngay nhé!
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-1.5 pt-1">
+        <button onclick="sendChatMessage('Giao hỏa tốc Biên Hòa mất bao lâu?')" class="text-[11px] bg-white border border-blue-200 text-blue-700 hover:bg-blue-50 px-2.5 py-1 rounded-full font-medium transition">
+          ⚡ Giao hỏa tốc mất bao lâu?
+        </button>
+        <button onclick="sendChatMessage('Chính sách bảo hành 1 đổi 1 tận nhà?')" class="text-[11px] bg-white border border-blue-200 text-blue-700 hover:bg-blue-50 px-2.5 py-1 rounded-full font-medium transition">
+          🛡️ Bảo hành 1 đổi 1 tận nhà?
+        </button>
+        <button onclick="sendChatMessage('Tư vấn củ sạc nhanh GaN 65W')" class="text-[11px] bg-white border border-blue-200 text-blue-700 hover:bg-blue-50 px-2.5 py-1 rounded-full font-medium transition">
+          🔋 Tư vấn củ sạc GaN 65W
+        </button>
+      </div>
+    </div>
+
+    <div class="p-2.5 border-t border-slate-200 bg-white flex items-center gap-2">
+      <input 
+        type="text" 
+        id="chat-user-input" 
+        placeholder="Nhập tin nhắn..." 
+        class="flex-1 px-3 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-blue-600"
+      >
+      <button onclick="sendChatMessage()" class="w-8 h-8 rounded-xl bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center text-xs transition">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER PHÁP LÝ & BẢO HÀNH
+       ========================================================================= -->
+  <footer class="bg-slate-900 text-slate-300 text-xs border-t border-slate-800 pt-12 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
+        
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/logo.jpg" alt="THƯƠNG TỐC" class="w-10 h-10 rounded-xl object-contain bg-white p-0.5">
+            <div>
+              <span class="text-base font-black text-white">THƯƠNG <span class="text-blue-500">TỐC</span></span>
+              <p class="text-[10px] text-slate-400 uppercase">Express Tech Biên Hòa</p>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed text-xs">
+            <strong>CÔNG TY TNHH THƯƠNG MẠI & DỊCH VỤ CÔNG NGHỆ THƯƠNG TỐC</strong><br>
+            MST: 3603998868 | Sở KH&ĐT Tỉnh Đồng Nai cấp.
+          </p>
+          <p class="text-slate-400 text-xs">
+            <i class="fas fa-location-dot text-red-500 mr-1.5"></i> 168 Đường Đồng Khởi, Phường Tân Phong, TP. Biên Hòa, Tỉnh Đồng Nai.<br>
+            <i class="fas fa-phone text-blue-400 mr-1.5"></i> Hotline: 1900-6868
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Liên Kết Nhanh</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><button onclick="navigateTo('home')" class="hover:text-white transition">Trang Chủ</button></li>
+            <li><button onclick="navigateTo('shop')" class="hover:text-white transition">Cửa Hàng Phụ Kiện</button></li>
+            <li><button onclick="navigateTo('flashsale')" class="hover:text-white transition">Flash Sale Giảm Sốc</button></li>
+            <li><button onclick="navigateTo('about')" class="hover:text-white transition">Về Chúng Tôi</button></li>
+            <li><button onclick="navigateTo('orders')" class="hover:text-white transition">Đơn Hàng Của Tôi</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Chính Sách & Cam Kết</h4>
+          <ul class="space-y-2 text-slate-400">
+            <li><span class="text-emerald-400 font-bold">✓ Gói Bảo Hành 1 Đổi 1 Tận Nhà 12 Tháng</span> tự động đi kèm mọi đơn hàng.</li>
+            <li><span class="text-amber-400 font-bold">✓ Giao Hỏa Tốc 30-60 Phút:</span> Phí 15.000đ (Miễn phí từ 200.000đ).</li>
+            <li><span>✓ Kiểm tra hàng trước khi thanh toán.</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3">Thanh Toán Linh Hoạt</h4>
+          <div class="flex items-center gap-2 flex-wrap mb-4">
+            <span class="px-2 py-1 bg-slate-800 rounded font-mono font-bold text-blue-400 text-xs">VietQR</span>
+            <span class="px-2 py-1 bg-slate-800 rounded font-mono font-bold text-pink-400 text-xs">MoMo</span>
+            <span class="px-2 py-1 bg-slate-800 rounded font-mono font-bold text-blue-400 text-xs">ZaloPay</span>
+            <span class="px-2 py-1 bg-slate-800 rounded font-mono font-bold text-emerald-400 text-xs">COD</span>
+          </div>
+          <div class="p-2.5 bg-blue-950/60 rounded-xl border border-blue-500/30 text-[10px] text-blue-300 font-bold flex items-center gap-2">
+            <i class="fas fa-shield-halved text-base text-blue-400"></i>
+            <span>ĐÃ THÔNG BÁO BỘ CÔNG THƯƠNG</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
+        <p>© 2026 CÔNG TY TNHH TM & DV CÔNG NGHỆ THƯƠNG TỐC. Tất cả quyền được bảo lưu.</p>
+        <p class="text-slate-400">1 CHẠM – 1 GIỜ – 1 NIỀM TIN</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed top-20 right-5 z-50 flex flex-col gap-2"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    function toggleWardDropdown(regionVal) {
+      const container = document.getElementById('checkout-ward-container');
+      if (!container) return;
+      if (regionVal === 'bienhoa') {
+        container.classList.remove('hidden');
+      } else {
+        container.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
